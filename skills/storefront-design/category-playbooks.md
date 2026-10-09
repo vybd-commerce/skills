@@ -7,6 +7,15 @@ What a storefront should emphasize per vertical. "Card" = the product card used 
 - Product page: size and colour options, size guide link (`/pages/size-guide`), Shipping & Returns accordion.
 - Homepage: editorial hero, featured products, full grid, brand statement.
 
+## Streetwear / drop-based apparel
+Use when the brand sells in limited drops (the brief names drop-model references, or the catalog has a "new" collection, style codes and frequent sell-outs).
+- Catalog model: each colourway may be its own product, grouped by a style code (a metafield or tag), with Size as the only option. Check how the store models this before building; don't force colour swatches onto it. Group colourways of one style on the product page and link between them.
+- Card: square images, minimal text (title, colour, price), dense grid. Show sold-out products with a clear "sold out" state instead of hiding them.
+- Collection page: category tabs by product type (jackets, tops, pants, hats, bags…), plus "new" and "sale".
+- Product page: size picker with sold-out sizes disabled, size guide link, colourway switcher across the style.
+- Drop mechanics, only if the brief asks for them: per-customer order limits (enforced in Shopify, never only in the UI), an alert bar for drop announcements, and a "store closed" state between drops with mailing-list signup.
+- Navigation can lead with editorial content (previews, lookbook, news) over product categories.
+
 ## Beauty / skincare
 - Card: swatches only if shade is an option. Show size/volume (e.g. "50 ml") under the title.
 - Product page: shade/size options. Ingredients, How to use and Benefits accordions sourced from product metafields (ask which namespace/key the merchant uses; don't hardcode text).

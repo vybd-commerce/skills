@@ -62,3 +62,4 @@ Summarize for the user:
 - admin writes performed, and any still pending approval
 - test and verify results
 - anything blocked on the team: SEO inputs, production deploy approval, missing assets
+- images still fetched from Framer for development (Framer rebuilds), with a request to share them from a CDN

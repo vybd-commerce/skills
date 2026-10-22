@@ -47,7 +47,19 @@ Framer runs on [Motion](https://motion.dev) (`motion` on npm). Use the same libr
 
 ## 5. Images
 
-Don't ship images downloaded from `framerusercontent.com` in the repo. Host them on the Shopify CDN:
+### No assets provided: use the Framer images for development
+
+If the intake has no imagery, or is missing images that the published site shows, don't stop the build:
+
+- Download the missing images from the published site (`framerusercontent.com` URLs) into `public/images/`, named by placement (`hero-home.jpg`, `about-hero.jpg`). Take the largest size the site serves.
+- Record each one in `docs/asset-manifest.md` with source `framer` and status `dev only`, plus the original Framer URL.
+- Tell the developer, in the step's summary and in the hand-off, that these images were fetched from the Framer site for development only, and list them.
+- Suggest they share production assets from a CDN: product photos via the store's product export CSV, and the rest uploaded to Shopify Content → Files with the same file names, then the links sent over. Explain that the names matter because the links are built from them.
+- Never hotlink `framerusercontent.com` from the code: those URLs belong to the Framer project and can change or disappear.
+
+### Production: host on the Shopify CDN
+
+Don't ship images downloaded from Framer in the repo. Once the developer shares the assets, move them to the Shopify CDN and mark each manifest row `cdn`:
 
 - **Product photos:** use the store's product export CSV (`Image Src` column) or query them through the Storefront API and render with `<Image>`. Match site images to product images visually with a contact sheet, never by file name.
 - **Everything else** (portraits, heroes, press, logos, social image): the user uploads them to **Content → Files**, keeping the original file names. The URL is then `https://cdn.shopify.com/s/files/1/<shop id>/files/<file name>`. `?v=` is optional, and `&width=<px>` returns a resized copy. Uploading yourself needs an Admin API token with `write_files`; without it, this is a manual step for the user.

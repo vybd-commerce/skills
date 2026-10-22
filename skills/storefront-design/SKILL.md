@@ -43,7 +43,7 @@ Tokens are the named design values that every section references in place of raw
 
 - Fonts: self-host the files from `01-brand-assets/fonts` in `public/fonts` with `@font-face`, or use Google Fonts via `links()` in `app/root.tsx`. Load only the weights you use.
 - Logo: SVG in `app/assets/`, rendered in the header with `alt="<Brand> home"`. Add a favicon derived from the logo mark.
-- Imagery always comes from intake (`03-imagery`, product images); never use placeholders or generated images. If a placement in the section plan has no image, stop and ask.
+- Imagery always comes from intake (`03-imagery`, product images); never use placeholders or generated images. If a placement in the section plan has no image, stop and ask. Exception: when rebuilding a Framer site, use the published site's images for development and tell the developer (see [framer-rebuild.md](framer-rebuild.md) section 5).
 - Product images come from Shopify through Hydrogen's `<Image>`.
 - Static images (heroes, portraits, press, social image) are hosted on the Shopify CDN: the user uploads them to Content → Files with their original names, and the code references `https://cdn.shopify.com/s/files/1/<shop id>/files/<file name>` (add `&width=<px>` to resize). Use `public/images/` (≤2400px wide, compressed) only until they're uploaded, then delete the local copies. Details and checks in [framer-rebuild.md](framer-rebuild.md) section 5.
 

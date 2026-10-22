@@ -20,6 +20,10 @@ Agent skills for building Shopify Hydrogen storefronts for merchants, from a Goo
 
 Human checkpoints: missing brief fields, the admin write plan (Tier B changes), the SEO review and production deploys.
 
+## Rebuilding a Framer site
+
+When the merchant already has a site in Framer, the published site is the design reference. See [`skills/storefront-design/framer-rebuild.md`](skills/storefront-design/framer-rebuild.md) for measuring, matching Framer's motion, hosting images on the Shopify CDN, and verifying against the published site.
+
 ## Merchant intake
 
 Set up each merchant's Drive folder as described in [`skills/merchant-intake/drive-folder-structure.md`](skills/merchant-intake/drive-folder-structure.md), and fill in the brief from [`skills/merchant-intake/brief-template.md`](skills/merchant-intake/brief-template.md).

@@ -45,8 +45,19 @@ Then run `npx shopify hydrogen deploy` (Production is the default target, or pas
 
 If the team connects the GitHub repo through the Hydrogen channel, Shopify adds an Oxygen workflow that deploys on every push. In that case:
 - Pushes to non-default branches → preview deployments.
-- The default branch → production, so merging becomes the approval gate. Protect the branch and require PR review.
+- The default branch → production, so merging becomes the approval gate. Protect the branch and require PR review. The user merges into the default branch, not the agent.
 - Creating the GitHub repo, adding secrets and changing branch protection all need the user's approval.
+
+Connecting (the team member does this in the Hydrogen channel → Create storefront → Connect to GitHub):
+- Shopify asks to link the Shopify login to a GitHub account ("Confirm account link"). If the team is using the merchant's Shopify login, this links the merchant's account to the developer's GitHub. Point that out, and have them install the Shopify GitHub app with **Only select repositories** → this repo. The link can be revoked later in GitHub → Settings → Applications.
+- Shopify then pushes `.github/workflows/oxygen-deployment-<id>.yml` on a new `shopify-setup-oxygen-workflow-*` branch cut from the default branch, and opens a PR. Check for it with `git fetch` and `gh run list`.
+- If the storefront code isn't on the default branch yet, that first run fails with "Looks like you're trying to run a Hydrogen command outside of a Hydrogen project". Cherry-pick Shopify's workflow commit onto the working branch and push it: that branch gets a preview deploy. Merging the working branch into the default branch then deploys production, and Shopify's setup PR becomes redundant (close it unmerged).
+
+After connecting:
+- The preview URL isn't printed in the GitHub Actions log. It's under Hydrogen → [storefront] → Deployments.
+- Preview deployments are private (Shopify login required). The Preview environment itself can't be made public: switch URL privacy to Public on each deployment's details page. For one stable shareable URL, add a custom environment tied to the working branch.
+- Variables Shopify doesn't inject (e.g. email or third-party API keys) must be added per environment under Storefront settings → Environments and variables, and only apply from the next deploy.
+- Commits, PR titles/descriptions and `--metadata-description` carry no AI attribution (no `Co-Authored-By: Claude…`, no "Generated with Claude Code", no mention of Claude or Anthropic). See the rule in `build-storefront`.
 
 ## Done when
 

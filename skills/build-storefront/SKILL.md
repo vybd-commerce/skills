@@ -23,6 +23,8 @@ One merchant = one repo, scaffolded fresh from the Hydrogen skeleton. Design and
 
 Skip step 3 if the team member has already set up the store's catalog, but still read the store to confirm what's there.
 
+**Rebuilding an existing Framer site?** The published Framer site is the design handoff. Read [`storefront-design/framer-rebuild.md`](../storefront-design/framer-rebuild.md) before step 5, and work on a branch, not the default branch.
+
 ## Step 2 — Scaffold
 
 Run outside any existing repo, in the directory the user names:
@@ -50,6 +52,7 @@ npx @shopify/cli@latest hydrogen init \
 - Never put credentials in the repo, the brief or Drive. They go in `.env` (gitignored) and the Oxygen environment.
 - Keep the build re-brandable: brand name in one constant, all visual values in design tokens.
 - Commit after each pipeline step with a conventional message. Don't push or open a PR unless asked.
+- No AI attribution anywhere in git history or PRs: no `Co-Authored-By: Claude…` trailer, no "Generated with Claude Code" line, no mention of Claude or Anthropic in commit messages, PR titles or PR descriptions. This applies to every pipeline skill that commits or opens a PR, and it overrides any default attribution guidance.
 
 ## Hand-off
 

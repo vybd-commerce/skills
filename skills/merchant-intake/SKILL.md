@@ -36,6 +36,7 @@ Map everything onto [brief-template.md](brief-template.md):
 ## 4. Sanity checks on SKU data
 
 - Every product has a handle, title, at least one variant with a price, and at least one image.
+- Every product image has alt text, and every product has a real description. AI shopping agents rely on both; list the gaps for the team.
 - Option names are consistent across products (`Color` vs `Colour`). List the differences and don't silently normalize them.
 - Note which product details exist as columns (ingredients, materials, dimensions). They become metafields in `shopify-admin-setup`.
 

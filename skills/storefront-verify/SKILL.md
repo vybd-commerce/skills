@@ -34,6 +34,16 @@ Each hit must be fixed, or be intentional and explained.
 
 Run `pnpm preview` (or use the Oxygen preview URL) and screenshot home, a collection, a product, the open cart drawer, search and a content page at 375, 768 and 1440px. Compare against the section plan, and against Figma if there is one. Fix layout breaks, overflow, unreadable text and broken images.
 
+### Rebuilt from a Framer site
+
+Also compare against the published site, as in [`storefront-design/framer-rebuild.md`](../storefront-design/framer-rebuild.md) section 6:
+
+```bash
+node <skills>/storefront-design/scripts/framer-compare.mjs <framer url> <storefront url> <out dir> / /about /contact
+```
+
+Report the remaining differences, each with its reason (store data, accessibility, an approved change). Treat any `TIGHT line height` line as a failure unless it's a deliberate single-line label. Then check the motion inventory on each page, including scroll-back and hover states.
+
 ## 4. Brief compliance
 
 Walk through `docs/merchant-brief.md`. Confirm that each required item is either implemented or listed as blocked: market and currency, pages, policies, SEO inputs, and admin writes still pending approval.

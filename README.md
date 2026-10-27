@@ -22,7 +22,7 @@ Human checkpoints: missing brief fields, the admin write plan (Tier B changes), 
 
 ## Rebuilding a Framer site
 
-When the merchant already has a site in Framer, the published site is the design reference. See [`skills/storefront-design/framer-rebuild.md`](skills/storefront-design/framer-rebuild.md) for measuring, matching Framer's motion, hosting images on the Shopify CDN, and verifying against the published site.
+When the merchant already has a site in Framer, the published site is the design reference. See [`skills/storefront-design/framer-rebuild.md`](skills/storefront-design/framer-rebuild.md) for measuring, matching Framer's motion, hosting images on the Shopify CDN, and verifying against the published site. [`scripts/framer-compare.mjs`](skills/storefront-design/scripts/framer-compare.mjs) diffs every text element's type and position between the two sites.
 
 ## Merchant intake
 
